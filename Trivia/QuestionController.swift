@@ -16,8 +16,8 @@ class QuestionController {
     // Request questions from given url
     func fetchQuestions(completion: @escaping ([Question]?) -> Void) {
         let questionURL = baseURL.appendingPathComponent("random")
-        let task = URLSession.shared.dataTask(with: questionURL)
-        { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: questionURL) {
+            (data, response, error) in
             let jsonDecoder = JSONDecoder()
             if let data = data,
                 let questions = try? jsonDecoder.decode([Question].self, from: data) {
