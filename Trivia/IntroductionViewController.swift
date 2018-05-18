@@ -22,6 +22,7 @@ class IntroductionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Linked to done button to restart trivia
     @IBAction func unwindToQuizIntroduction(segue: UIStoryboardSegue) {
     }
     

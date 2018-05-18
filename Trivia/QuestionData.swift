@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Struct of the given data
 struct Question: Codable {
     var id: Int
     var answer: String

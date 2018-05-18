@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     var questions = [Question]()
     var correctAnswers: Int = 0
     
+    // Outlet variables
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerTextField: UITextField!
     @IBOutlet weak var answerButton: UIButton!
@@ -33,7 +34,7 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // Function when submit button is pressed
     @IBAction func submitButtonPressed(_ sender: Any) {
         if answerTextField.text == questions[0].answer  {
             correctAnswers += questions[0].value
@@ -43,6 +44,7 @@ class QuestionViewController: UIViewController {
         nextQuestion()
     }
     
+    // Update screen function
     func updateUI() {
         QuestionController.shared.fetchQuestions() { (questions) in
             if let questions = questions {
@@ -67,6 +69,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    // Function to ResultViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultsSegue" {
             let resultViewController = segue.destination as! ResultViewController

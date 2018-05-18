@@ -13,11 +13,18 @@ class ResultViewController: UIViewController {
     // MARK: - Variables
     @IBOutlet weak var scoreLabel: UILabel!
     
+    // Score from the trivia
     var score: Int!
+    
+    // Function for the score
+    func finalScore() {
+        scoreLabel.text = "You've Scored \(score) Points!"
+    }
 
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        finalScore()
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }

@@ -13,7 +13,7 @@ class QuestionController {
     static let shared = QuestionController()
     let baseURL = URL(string: "http://jservice.io/api/")!
     
-    //     obtain questions
+    // Request questions from given url
     func fetchQuestions(completion: @escaping ([Question]?) -> Void) {
         let questionURL = baseURL.appendingPathComponent("random")
         let task = URLSession.shared.dataTask(with: questionURL)
